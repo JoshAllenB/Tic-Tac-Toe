@@ -1,8 +1,196 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   border: 0;
   font-family: 'Ubuntu', sans-serif;
+}
+.container {
+  width: 100%;
+  height: 90%;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.headerContainer {
+  width: 100%;
+  height: 10%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animate-character{
+  margin: 0;
+  font-size: 80px;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #ff65f2 1%,
+    #7b00ff 29%,
+    #00fff2 67%,
+    #ff00ff 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+#display {
+  font-size: 25px;
+  font-family: 'Archivo Black', sans-serif;
+  margin: 10px;
+}
+
+.gameContainer {
+  width: 100%;
+  height: 70%;
+  margin-top: 10px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  width: 30vw;
+  height: 55vh;
+}
+
+.box{
+  width: auto;
+  height: auto;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 1rem;
+  font-size: max(4vw,3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 8rem;
+  padding: 20px;
+  border: 3px solid #000000;
+  cursor: pointer;
+}
+
+.box:hover,
+.box:focus {
+  animation: color-mix 1s linear infinite alternate;
+  box-shadow: 0 0 50px 0 currentColor;
+  border-radius: 8px;
+}
+
+@keyframes color-mix {
+  0% { color: #ff00ff }
+  100% { color: #00fff2 }
+}
+
+.controlWrapper {
+  background-color: rgb(248, 248, 248);
+  width: 100%;
+  height: 30%;
+  box-shadow: inset 0px 0px 20px 0px #bebebe;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  font-size: max(2vh, 10px);
+}
+
+.player {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.player input {
+  height: 30px;
+  margin: 10px;
+  padding: 5px;
+  font-size: 18px;
+
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(150, 150, 150);
+  color: #ffffff;
+}
+
+::placeholder {
+  font-size: 18px;
+  padding: 10px;
+  color: #ffffff;
+}
+
+.checkboxContainer {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  gap: 20px;
+}
+
+.checkboxContainer input {
+  width: 30px;
+  height: 20px;
+}
+
+.buttonContainer {
+  width: 100%;
+  height: 40%;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.buttonContainer button{
+  font-size: 18px;
+  font-weight: bold;
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.buttonContainer button:hover,
+.buttonContainer button:focus {
+  animation: color-mix 1s linear infinite alternate;
+  box-shadow: 0 0 50px 0 currentColor;
+  transform: translateY(-0.65em);
 }

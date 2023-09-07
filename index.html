@@ -3,16 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Tic-Tac-Toe</title>
 </head>
 <body>
   <header class="headerContainer">
-
+    <h1 class="animate-character">Tic Tac Toe</h1>
   </header>
+<div class="container">
+  <div id="display"></div>
   <div class="gameContainer">
-
+    <div class="gameBoard" id="gameBoard">
+      
+    </div>
   </div>
-
+<div class="controlWrapper">
+  <div class="controls">
+    <form id="myForm">
+      <div class="player" id="player">
+        <input type="text" id="player1" placeholder="Player 1 Name">
+        <input type="text" id="player2" placeholder="Player 2 Name">
+      </div>
+    </form>
+    <!-- <div class="checkboxContainer">
+      <h4>AI Easy<input type="checkbox" id="aiEasy" name="aiDifficulty" value="easy"></h4>
+      <h4>AI Hard<input type="checkbox" id="aiHard" name="aiDifficulty" value="hard"></h4>
+    </div> -->
+    <div class="buttonContainer">
+      <button id="startButton">Start Game</button>
+      <button id="restartButton">Restart Game</button>
+    </div>
+  </div>
+</div>
+  <div id="message"></div>
+  <div id="resultDisplay"></div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
